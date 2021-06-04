@@ -1,2 +1,3 @@
-# Dev_code
-This section is all about basic codes developed by developers
+# maven-project
+
+Simple Maven Project
