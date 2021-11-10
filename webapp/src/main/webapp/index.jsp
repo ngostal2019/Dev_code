@@ -47,6 +47,7 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
             <option value="staline">Staline</option>
             <option value="smart">Smart</option>
             <option value="nissan">Nissan</option>
+            <option value="chevrolet">Chevrolet</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
@@ -58,5 +59,6 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
             <h5>Copyrights 2021 Website Powered By "UNIXCLOUDTRAININGS"</h5>
         </footer>
     </div>
+    <h1>It was a really Nice Session. Love you all !!!</h1>
 </body>
 </html>
