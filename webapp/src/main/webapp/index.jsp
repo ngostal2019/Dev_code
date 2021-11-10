@@ -45,6 +45,8 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
             <option value="jeepgrandcherokee">Jeep Grand Cherokee</option>
             <option value="porch">Porch</option>
             <option value="staline">Staline</option>
+            <option value="smart">Smart</option>
+            <option value="nissan">Nissan</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
