@@ -50,6 +50,7 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
             <option value="chevrolet">Chevrolet</option>
             <option value="gt">GT</option>
             <option value="mayback">Mayback</option>
+            <option value="acoura">Acoura</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
