@@ -48,6 +48,7 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
             <option value="smart">Smart</option>
             <option value="nissan">Nissan</option>
             <option value="chevrolet">Chevrolet</option>
+            <option value="gt">GT</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
@@ -57,7 +58,7 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
     <h1>It was a really Nice Session. Love you all !!!</h1>
     <div style="top: 100%; position: center;">
         <footer>
-            <h5>Copyrights 2021 Website Powered By "UNIXCLOUDTRAININGS"</h5>
+            Copyrights 2023 Website Powered By "UNIXCLOUDTRAININGS"
         </footer>
     </div>
 </body>
