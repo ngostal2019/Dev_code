@@ -58,6 +58,8 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
         <input type="reset" value="Reset">
     </form><br><br>
     <h1>It was a really Nice Session. Love you all !!!</h1>
+    <p>It was not easy but we did it together.</p><br>
+    <p>I hope I was up to share you the knowledge you need for your next career</p>
     <div style="top: 100%; position: center;">
         <footer>
             Copyrights 2023 Website Powered By "UNIXCLOUDTRAININGS"
