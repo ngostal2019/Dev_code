@@ -54,11 +54,11 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
         <label for="reset"></label>
         <input type="reset" value="Reset">
     </form><br><br>
-    <div>
+    <h1>It was a really Nice Session. Love you all !!!</h1>
+    <div style="top: 100%; position: center;">
         <footer>
             <h5>Copyrights 2021 Website Powered By "UNIXCLOUDTRAININGS"</h5>
         </footer>
     </div>
-    <h1>It was a really Nice Session. Love you all !!!</h1>
 </body>
 </html>
