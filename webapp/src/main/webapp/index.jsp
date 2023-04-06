@@ -17,8 +17,8 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
         <input type="text" id="lname" value=" "><br>
         <label for="email">Email:</label>
         <input type="email" name="email" required><br>
-        <label for="bday">Birthday:</label>
-        <input type="date" name="birthday"><br>
+        <label for="bday">D.O.B:</label>
+        <input type="date" name="date of birdth"><br>
         <label for="pswd">Password:</label>
         <input type="password" name="pswd" id="passwd" minlength="8" required><br><br>
         <label for="gender">Gender:</label><br>
@@ -28,38 +28,13 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
         <label for="car">Please choose your 2022 Car model:</label>
         <select name="car">
             <option value="tesla">Tesla</option>
-            <option value="ford">Ford Fusion</option>
-            <option value="mazeratti">Mazeratti</option>
-            <option value="corvette">Corvette</option>
-            <option value="porche">Porche</option>
-            <option value="minicopper">Mini Copper</option>
-            <option value="lamborghini">Lamborghini</option>
-            <option value="hondaaccord">Honda Accord</option>
-            <option value="honodacivic">Honda Civic</option>
-            <option value="hondapilot">Honda Pilot</option>
-            <option value="hondacrv">Honda CRV</option>
-            <option value="cadillac">Cadillac</option>
-            <option value="pontiac">Pontiac</option>
-            <option value="toyota">Toyota</option>
-            <option value="lexus">Lexus</option>
-            <option value="jeepgrandcherokee">Jeep Grand Cherokee</option>
-            <option value="porch">Porch</option>
-            <option value="staline">Staline</option>
-            <option value="smart">Smart</option>
-            <option value="nissan">Nissan</option>
-            <option value="chevrolet">Chevrolet</option>
-            <option value="gt">GT</option>
-            <option value="mayback">Mayback</option>
-            <option value="acoura">Acoura</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
         <label for="reset"></label>
         <input type="reset" value="Reset">
     </form><br><br>
-    <h1>It was a really Nice Session. Love you all !!!</h1>
-    <p>It was not easy but we did it together.</p><br>
-    <p>I hope I was up to share you the knowledge you need for your next career</p>
+    <h1>Let's get started the CI/CD pipeline!!!</h1>
     <div style="top: 100%; position: center;">
         <footer>
             Copyrights 2023 Website Powered By "UNIXCLOUDTRAININGS"
