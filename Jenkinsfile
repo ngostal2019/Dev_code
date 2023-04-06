@@ -18,35 +18,33 @@ pipeline {
       retries 2
     }
   }
-  container('maven') {
-    stages {
-        stages{
-          stage('Pulling Java Project From GitHub') {
+   container('maven') {
+      stages{
+        stage('Pulling Java Project From GitHub') {
+          steps {
+            git branch: 'main', url: 'https://github.com/ngostal2019/Dev_code.git'
+          }
+        }
+        stage('Maven Clean') {
             steps {
-                git branch: 'main', url: 'https://github.com/ngostal2019/Dev_code.git'
+              sh 'mvn clean'
             }
+        }
+        stage('Maven Install') {
+          steps {
+            sh 'mvn -B install'
           }
-          stage('Maven Clean') {
-              steps {
-                sh 'mvn clean'
-              }
+        }
+        stage('Maven Test') {
+          steps {
+            sh 'mvn test'
           }
-          stage('Maven Install') {
-            steps {
-              sh 'mvn -B install'
-            }
-          }
-          stage('Maven Test') {
-            steps {
-              sh 'mvn test'
-            }
-          }
-          stage('Maven Package') {
-            steps {
+        }
+        stage('Maven Package') {
+          steps {
               sh 'mvn package'
-            }
           }
         }
       }
-  }
+   }
 }
