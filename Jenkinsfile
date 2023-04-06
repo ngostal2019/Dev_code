@@ -30,10 +30,10 @@ pipeline {
       }
       stage('Maven Clean') {
         steps {
-          sh """"
+          sh '''
           echo '\033[34mMaven\033[0m \033[33mCleanup\033[0m \033[35mStarted!\033[0m'
           mvn clean
-          """
+          '''
         }
       }
       stage('Maven Install') {
