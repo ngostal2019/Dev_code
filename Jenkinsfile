@@ -19,31 +19,37 @@ pipeline {
       retries 2
     }
   }
-   stages{
-     stage('Pulling Java Project From GitHub') {
-       steps {
-         git branch: 'main', url: 'https://github.com/ngostal2019/Dev_code.git'
-       }
-     }
-     stage('Maven Clean') {
-       steps {
-         sh 'mvn clean'
-       }
-     }
-     stage('Maven Install') {
-       steps {
-         sh 'mvn -B install'
-       }
-     }
-       stage('Maven Test') {
-       steps {
-         sh 'mvn test'
-       }
-     }
-     stage('Maven Package') {
-       steps {
-        sh 'mvn package'
-       }
-     }
-   }
-}
+  options {
+        ansiColor('xterm')
+    }
+    stages{
+      stage('Pulling Java Project From GitHub') {
+        steps {
+          git branch: 'main', url: 'https://github.com/ngostal2019/Dev_code.git'
+        }
+      }
+      stage('Maven Clean') {
+        steps {
+          sh """"
+          echo '\033[34mMaven\033[0m \033[33mCleanup\033[0m \033[35mStarted!\033[0m'
+          mvn clean
+          """
+        }
+      }
+      stage('Maven Install') {
+        steps {
+          sh 'mvn -B install'
+        }
+      }
+        stage('Maven Test') {
+        steps {
+          sh 'mvn test'
+        }
+      }
+      stage('Maven Package') {
+        steps {
+          sh 'mvn package'
+        }
+      }
+    }
+  }
