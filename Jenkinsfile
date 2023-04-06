@@ -19,21 +19,20 @@ pipeline {
       retries 2
     }
   }
-  options {
-        ansiColor('xterm')
-    }
     stages{
       stage('Pulling Java Project From GitHub') {
         steps {
           git branch: 'main', url: 'https://github.com/ngostal2019/Dev_code.git'
         }
       }
-      stage('Maven Clean') {
-        steps {
-          sh '''
-          echo '\033[34mMaven\033[0m \033[33mCleanup\033[0m \033[35mStarted!\033[0m'
-          mvn clean
-          '''
+      ansiColor('xterm'){
+        stage('Maven Clean') {
+          steps {
+            sh '''
+            echo '\033[34mMaven\033[0m \033[33mCleanup\033[0m \033[35mStarted!\033[0m'
+            mvn clean
+            '''
+          }
         }
       }
       stage('Maven Install') {
