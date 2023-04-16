@@ -29,6 +29,7 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
         <select name="car">
             <option value="tesla">Tesla</option>
             <option value="Jeep">Jeep</option>
+            <option value="Mercedes">Mercedes</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
