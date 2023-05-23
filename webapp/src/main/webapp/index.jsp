@@ -33,6 +33,7 @@ background: linear-gradient(347deg, rgba(41, 68, 36, 0.248) 0%, rgba(54,26,46,0.
             <option value="Toyota">Toyota</option>
             <option value="Kia">Kia</option>
             <option value="Genesis">Genesis</option>
+            <option value="Mazda">Mazda</option>
         </select><br><br>
         <label for="submit"></label>
         <input type="submit" value="Register">
