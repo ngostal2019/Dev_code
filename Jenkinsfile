@@ -1,23 +1,24 @@
 pipeline {
-  agent
+  agent {
     kubernetes {
       defaultContainer 'maven'
       yaml '''
-    apiVersion: v1
-    kind: Pod
-    metadata:
-      labels:
-        name: staline
-    spec:
-      containers:
-      - name: maven
-        image: maven:alpine
-        command:
-        - cat
-        tty: true
-    '''
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          labels:
+            name: staline
+        spec:
+          containers:
+          - name: maven
+            image: maven:alpine
+            command:
+            - cat
+            tty: true
+        '''
         retries 2
     }
+  }
    stages{
      stage('Pulling Java Project From GitHub') {
        steps {
