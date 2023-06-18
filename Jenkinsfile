@@ -20,11 +20,6 @@ pipeline {
     }
   }
    stages{
-     stage('Pulling Java Project From GitHub') {
-       steps {
-         git branch: 'main', url: 'https://github.com/ngostal2019/Dev_code.git'
-       }
-     }
      stage('Maven Clean') {
        steps {
          sh 'mvn clean'
