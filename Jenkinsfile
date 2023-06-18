@@ -1,6 +1,5 @@
 pipeline {
-  agent {
-    any
+  agent any
     // kubernetes {
     //   defaultContainer 'maven'
     //   yaml '''
@@ -19,7 +18,6 @@ pipeline {
     //     '''
     //   retries 2
     // }
-  }
    stages{
      stage('Pulling Java Project From GitHub') {
        steps {
