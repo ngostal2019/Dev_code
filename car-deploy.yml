@@ -23,7 +23,8 @@ spec:
     spec:
       containers:
       - name: toyota
-        image: menesk2m/car-brand-choice:9b45f
+        image: menesk2m/car-brand-choice:d14e4
+
         resources:
           requests:
             memory: "64Mi"
