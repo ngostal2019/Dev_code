@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: car-deploy
+  namespace: car
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      madeby: uct
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  minReadySeconds: 5
+  template:
+    metadata:
+      name: car-pod
+      namespace: car
+      labels:
+        madeby: uct
+    spec:
+      containers:
+      - name: toyota
+        image: menesk2m/car-brand-choice:9b45f
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "125m"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
