@@ -17,3 +17,13 @@ jobs:
 
       - name: Build with Maven
         run: mvn -B package -f pom.xml
+        
+      - name: Set up JFrog CLI
+        uses: jfrog/setup-jfrog-cli@v1
+        with:
+          url: ${{ secrets.ARTIFACTORY_URL }}
+          username: ${{ secrets.ARTIFACTORY_USERNAME }}
+          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        
+      - name: upload to jfrog artifactory
+        run: jfrog rt u "webapp/target/webapp.war" artifactory/libs-snapshot-local/webapp.war
