@@ -55,12 +55,6 @@
             </plugin>
 
             <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-war-plugin</artifactId>
-              <version>3.3.2</version> <!-- Update this version to a compatible one -->
-            </plugin>
-
-            <plugin>
               <artifactId>maven-jxr-plugin</artifactId>
             </plugin>
 
@@ -79,6 +73,7 @@
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>findbugs-maven-plugin</artifactId>
+              <version>3.3.2</version>
             </plugin>
 
             <plugin>
