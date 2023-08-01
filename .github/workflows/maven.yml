@@ -17,7 +17,7 @@ on:
 jobs:
   build:
 
-    runs-on: maven:3.8.4-openjdk-17-slim
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
