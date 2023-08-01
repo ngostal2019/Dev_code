@@ -12,8 +12,10 @@
   <url>http://www.example.com</url>
 
   <properties>
-    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
   <modules>
@@ -31,54 +33,37 @@
 
   <build>
     <plugins>
+      <!-- Maven Compiler Plugin -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
         </configuration>
       </plugin>
 
+      <!-- Maven Release Plugin -->
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
         </configuration>
       </plugin>
 
+      <!-- Maven Site Plugin -->
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
+        <version>3.14</version>
         <configuration>
           <reportPlugins>
+            <!-- Add the report plugins you need here -->
+            <!-- Example:
             <plugin>
               <artifactId>maven-checkstyle-plugin</artifactId>
             </plugin>
-
-            <plugin>
-              <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-pmd-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>taglist-maven-plugin</artifactId>
-            </plugin>
+            -->
           </reportPlugins>
         </configuration>
       </plugin>
@@ -86,77 +71,91 @@
 
     <pluginManagement>
       <plugins>
+        <!-- Maven Checkstyle Plugin -->
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>2.8</version>
+          <version>3.1.1</version>
         </plugin>
 
+        <!-- Maven Compiler Plugin -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
+          <version>3.8.1</version>
         </plugin>
 
+        <!-- Maven Javadoc Plugin -->
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.8</version>
+          <version>3.3.1</version>
         </plugin>
 
+        <!-- Maven JXR Plugin -->
         <plugin>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>2.3</version>
+          <version>3.0.1</version>
         </plugin>
 
+        <!-- Maven PMD Plugin -->
         <plugin>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.15.0</version>
         </plugin>
 
+        <!-- Maven Project Info Reports Plugin -->
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.4</version>
+          <version>3.2.0</version>
         </plugin>
 
+        <!-- Maven Release Plugin -->
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.2.1</version>
+          <version>3.0.0-M4</version>
         </plugin>
 
+        <!-- Maven Resources Plugin -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>2.5</version>
+          <version>3.2.0</version>
         </plugin>
 
+        <!-- Maven Site Plugin -->
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.0</version>
+          <version>3.14</version>
         </plugin>
 
+        <!-- Maven Surefire Report Plugin -->
         <plugin>
           <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>2.11</version>
+          <version>3.0.0-M5</version>
         </plugin>
 
+        <!-- Maven Surefire Plugin -->
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.11</version>
+          <version>3.0.0-M5</version>
         </plugin>
 
+        <!-- FindBugs Maven Plugin -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>2.3.3</version>
+          <version>3.0.6</version>
         </plugin>
 
+        <!-- Taglist Maven Plugin -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
           <version>2.4</version>
         </plugin>
 
+        <!-- Jetty Maven Plugin -->
         <plugin>
           <groupId>org.mortbay.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.0.0.M1</version>
+          <version>8.2.0.v20160908</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -205,6 +204,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
 
   <scm>
     <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
