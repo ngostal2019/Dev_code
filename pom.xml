@@ -1,219 +1,169 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example.maven-project</groupId>
-  <artifactId>maven-project</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>Maven Project</name>
-  <description>Sample Maven project with a working, deployable site.</description>
-  <url>http://www.example.com</url>
-
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
-
-  <modules>
-    <module>server</module>
-    <module>webapp</module>
-  </modules>
-
-  <distributionManagement>
-    <site>
-      <id>site-server</id>
-      <name>Test Project Site</name>
-      <url>file:///tmp/maven-project-site</url>
-    </site>
-  </distributionManagement>
-
-  <build>
-    <plugins>
-      <!-- Maven Compiler Plugin -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
-
-      <!-- Maven Release Plugin -->
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.3</version>
-        <configuration>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
-        </configuration>
-      </plugin>
-
-      <!-- Maven Site Plugin -->
-      <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.14</version>
-        <configuration>
-          <reportPlugins>
-            <!-- Add the report plugins you need here -->
-            <!-- Example:
-            <plugin>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
-            -->
-          </reportPlugins>
-        </configuration>
-      </plugin>
-    </plugins>
-
-    <pluginManagement>
-      <plugins>
-        <!-- Maven Checkstyle Plugin -->
-        <plugin>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.1</version>
-        </plugin>
-
-        <!-- Maven Compiler Plugin -->
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
-        </plugin>
-
-        <!-- Maven Javadoc Plugin -->
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.1</version>
-        </plugin>
-
-        <!-- Maven JXR Plugin -->
-        <plugin>
-          <artifactId>maven-jxr-plugin</artifactId>
-          <version>3.0.1</version>
-        </plugin>
-
-        <!-- Maven PMD Plugin -->
-        <plugin>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.15.0</version>
-        </plugin>
-
-        <!-- Maven Project Info Reports Plugin -->
-        <plugin>
-          <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.2.0</version>
-        </plugin>
-
-        <!-- Maven Release Plugin -->
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>3.0.0-M4</version>
-        </plugin>
-
-        <!-- Maven Resources Plugin -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.2.0</version>
-        </plugin>
-
-        <!-- Maven Site Plugin -->
-        <plugin>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.14</version>
-        </plugin>
-
-        <!-- Maven Surefire Report Plugin -->
-        <plugin>
-          <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>3.0.0-M5</version>
-        </plugin>
-
-        <!-- Maven Surefire Plugin -->
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M5</version>
-        </plugin>
-
-        <!-- FindBugs Maven Plugin -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-          <version>3.0.6</version>
-        </plugin>
-
-        <!-- Taglist Maven Plugin -->
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>taglist-maven-plugin</artifactId>
-          <version>2.4</version>
-        </plugin>
-
-        <!-- Jetty Maven Plugin -->
-        <plugin>
-          <groupId>org.mortbay.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.0.0.M1</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>jsp-api</artifactId>
-        <version>2.2</version>
-      </dependency>
-
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit-dep</artifactId>
-        <version>4.10</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-core</artifactId>
-        <version>1.2.1</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.hamcrest</groupId>
-        <artifactId>hamcrest-library</artifactId>
-        <version>1.2.1</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>1.8.5</version>
-        <scope>test</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+  <groupId>org.example</groupId>
+  <artifactId>jpademo</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
 
   <scm>
-    <connection>scm:git:git@github.com:jleetutorial/maven-project.git</connection>
-    <developerConnection>scm:git:git@github.com:jleetutorial/maven-project.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>http://github.com/jleetutorial/maven-project</url>
+      <connection>scm:git:ssh://my.git.server.internal/home/git/jpademo</connection>
+      <developerConnection>scm:git:ssh://my.git.server.internal/home/git/jpademo</developerConnection>
   </scm>
+  <ciManagement>
+      <system>jenkins</system>
+      <url>https://my.jenkins.internal/jenkins</url>
+  </ciManagement>
+  
+  
+  <name>jpademo</name>
+  <url>http://maven.apache.org</url>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <id>jar</id>
+                    </execution>
+                </executions>
+                <configuration>
+                      <archive>
+                        <manifestFile>src/main/resources/Manifest.txt</manifestFile>
+                        <manifest>
+                          <addClasspath>true</addClasspath>
+                         
+                          <mainClass>com.footballradar.jpademo.App</mainClass>
+                          
+                        </manifest>
+                      </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>1.4</version>
+                    <executions>
+                        <execution>
+                                <phase>package</phase>
+                                <goals>
+                                        <goal>shade</goal>
+                                </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                            <finalName>${project.artifactId}-${project.version}</finalName>
+                    </configuration>
+            </plugin>
+            
+        </plugins>
 
-  <prerequisites>
-    <maven>3.0.3</maven>
-  </prerequisites>
+    </build>
+
+    <repositories>
+    <repository>
+      <url>http://download.java.net/maven/2/</url>
+      <id>hibernate-support</id>
+      <layout>default</layout>
+      <name>Repository for library Library[hibernate-support]</name>
+    </repository>
+  </repositories>
+  
+
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>3.6.3.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>3.2.5.ga</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>3.3.2.GA</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.sql</groupId>
+      <artifactId>jdbc-stdext</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.0.1B</version>
+    </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>ejb3-persistence</artifactId>
+          <version>1.0.1.GA</version>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.14</version>
+      </dependency>
+      <dependency>
+          <artifactId>slf4j-api</artifactId>
+          <groupId>org.slf4j</groupId>
+          <type>jar</type>
+          <version>1.6.1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <version>1.6.1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-simple</artifactId>
+          <version>1.6.1</version>
+      </dependency>
+  </dependencies>
+  
+ <distributionManagement>
+    <repository>
+        <id>My_Artifactory_Releases</id>
+        <name>My_Artifactory-releases</name>
+        <url>http://my.maven.repository.internal/artifactory/release</url>
+    </repository>
+    
+    <snapshotRepository>
+        <id>My_Artifactory_Snapshots</id>
+        <name>My_Artifactory-snapshots</name>
+        <url>http://my.maven.repository.internal/artifactory/snapshot</url>
+    </snapshotRepository>
+
+</distributionManagement>
 
 </project>
