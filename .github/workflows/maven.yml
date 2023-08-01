@@ -22,6 +22,7 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v1
         with:
           url: ${{ secrets.ARTIFACTORY_URL }}
+          api_key: ${{ secrets.ARTIFACTORY_API_KEY }}
           username: ${{ secrets.ARTIFACTORY_USERNAME }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
         
