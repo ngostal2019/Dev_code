@@ -32,6 +32,14 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         
+      - name: publish to artifactory
+        uses: advancedcsg-open/action-jfrog-cli@master
+        with:
+          url: 'https://company.jfrog.io/'
+          credentials type: 'apikey'
+          apikey: ${{ secrets.RT_APIKEY }}
+          args: u "webapp/target/*.war" "artifactory/libs-snapshot-local/" --recursive=true --build-name=webapp.war
+        
       - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
         with:
