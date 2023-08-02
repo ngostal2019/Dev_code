@@ -18,13 +18,8 @@ jobs:
       - name: Build with Maven
         run: mvn -B package -f pom.xml
         
-      - name: Set up JFrog CLI
-        uses: jfrog/setup-jfrog-cli@v1
-        with:
-          url: ${{ secrets.ARTIFACTORY_URL }}
-          api_key: ${{ secrets.ARTIFACTORY_API_KEY }}
-          username: ${{ secrets.ARTIFACTORY_USERNAME }}
-          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-        
-      - name: upload to jfrog artifactory
-        run: jfrog rt u "webapp/target/webapp.war" artifactory/libs-snapshot-local/webapp.war --url=${{ secrets.ARTIFACTORY_URL }}
+      - name: Set up JFrog CLI and upload to JFrog Artifactory
+        run: |
+          curl -fL https://getcli.jfrog.io | sh
+          ./jfrog rt c rt-server --url="${{ secrets.ARTIFACTORY_URL }}" --apikey="${{ secrets.ARTIFACTORY_API_KEY }}"
+          ./jfrog rt u "webapp/target/webapp.war" rt-server:artifactory/libs-snapshot-local/webapp.war
