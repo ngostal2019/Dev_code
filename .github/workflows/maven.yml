@@ -18,9 +18,13 @@ jobs:
       - name: Build with Maven
         run: mvn -B package -f pom.xml
         
-      - uses: jfrog/setup-jfrog-cli@v1
+      - uses: jfrog/setup-jfrog-cli@v3
         env:
-          JF_ARTIFACTORY_1: ${{ secrets.ARTIFACTORY_API_KEY }}
+          # JFrog platform url (for example: https://acme.jfrog.io) 
+          JF_URL: ${{ secrets.ARTIFACTORY_URL }}
+
+          # Basic authentication credentials
+          JF_USER: ${{ secrets.ARTIFACTORY_USERNAME }}
+          JF_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
       - run: |
-          # Ping the server
-          jfrog rt ping
+          jf rt ping
