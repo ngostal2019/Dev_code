@@ -41,10 +41,11 @@ jobs:
           args: u "webapp/target/webapp.war" "artifactory/libs-snapshot-local/"
         
       - uses: mr-smithers-excellent/docker-build-push@v6
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
         name: Build & push Docker image
         with:
           image: menesk2m/action-car-apps
-          tags: v1
+          tags: ${{ git_hash }}
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
