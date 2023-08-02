@@ -22,7 +22,7 @@ jobs:
         env:
           # JFrog platform url (for example: https://acme.jfrog.io) 
           JF_URL: ${{ secrets.ARTIFACTORY_URL }}
-          JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_API_KEY }}
+          JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_token }}
 
           # Basic authentication credentials
           #JF_USER: ${{ secrets.ARTIFACTORY_USERNAME }}
