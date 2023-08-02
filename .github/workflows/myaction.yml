@@ -35,9 +35,10 @@ jobs:
       - name: publish to artifactory
         uses: advancedcsg-open/action-jfrog-cli@master
         with:
-          url: 'https://company.jfrog.io/'
-          credentials type: 'apikey'
-          apikey: ${{ secrets.RT_APIKEY }}
+          url: ${{ secrets.ARTIFACTORY_URL }}
+          credentials type: 'username'
+          RT_USER: ${{ secrets.ARTIFACTORY_USERNAME }}
+          RT_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
           args: u "webapp/target/*.war" "artifactory/libs-snapshot-local/" --recursive=true --build-name=webapp.war
         
       - uses: mr-smithers-excellent/docker-build-push@v6
