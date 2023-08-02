@@ -39,7 +39,7 @@ jobs:
           credentials type: 'username'
           user: ${{ secrets.ARTIFACTORY_USERNAME }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          args: u "webapp/target/*.war" "artifactory/libs-snapshot-local/" --recursive=true --build-name=webapp.war
+          args: u "webapp/target/webapp.war" "artifactory/libs-snapshot-local/" --recursive=true --build-name=webapp.war
         
       - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build & push Docker image
