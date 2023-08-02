@@ -28,4 +28,4 @@ jobs:
           JF_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
       - run: |
           jf rt ping
-          jfrog rt u "webapp/target/webapp.war" artifactory/libs-snapshot-local/
+          jfrog rt u webapp/target/webapp.war artifactory/libs-snapshot-local/
