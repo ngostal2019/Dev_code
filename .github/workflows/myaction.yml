@@ -57,8 +57,10 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.email "mngouanom@gmail.com"
-          git config --local user.name "maxime"
-          git commit -a -m "Add changes"
+          git config --local user.name "maxime menes"
+          git checkout -m main
+          git add car-deploy.yml
+          git commit -m "Add changes"
           
       - name: Push changes
         uses: ad-m/github-push-action@master
