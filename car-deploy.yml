@@ -23,7 +23,11 @@ spec:
     spec:
       containers:
       - name: toyota
+<<<<<<< refs/remotes/origin/dev
         image: menesk2m/car-brand-choice:20af9
+=======
+        image: menesk2m/action-car-apps:5746090423
+>>>>>>> local
 
         resources:
           requests:
