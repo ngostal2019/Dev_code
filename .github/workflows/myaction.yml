@@ -49,10 +49,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
+      - name: Update car-deploy.yml
+        run: |
+          sed -i "26s#image:.*#image: ${{ secrets.DOCKER_USERNAME }}/action-car-apps:${{ github.run_id }}#" car-deploy.yml
+          cat car-deploy.yml
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          find: "image:.*"
-          replace: "image: menesk2m/car-brand-choice:${{ github.run_id }}"
-          include: "**car-deploy.yml" # Will match all README.md files in any nested directory
-          flags: "gs"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
