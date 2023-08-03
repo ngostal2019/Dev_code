@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: toyota
-        image: menesk2m/action-car-apps:5746007408
+        image: menesk2m/action-car-apps:5746013352
 
         resources:
           requests:
