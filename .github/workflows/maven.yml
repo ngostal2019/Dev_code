@@ -62,7 +62,7 @@ jobs:
         run: |
           git config --local user.email "mngouanom@gmail.com"
           git config --local user.name "maxime menes"
-          git checkout -b main
+          git checkout -m main
           git add car-deploy.yml
           git commit -m "Add changes"
           
