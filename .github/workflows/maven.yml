@@ -9,6 +9,8 @@
 name: Java CI with Maven
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
     
@@ -60,7 +62,7 @@ jobs:
         run: |
           git config --local user.email "mngouanom@gmail.com"
           git config --local user.name "maxime menes"
-          git checkout -b MenesK2M-patch-1
+          git checkout -b main
           git add car-deploy.yml
           git commit -m "Add changes"
           
