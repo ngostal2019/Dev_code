@@ -54,6 +54,12 @@ jobs:
           sed -i "26s#image:.*#image: ${{ secrets.DOCKER_USERNAME }}/action-car-apps:${{ github.run_id }}#" car-deploy.yml
           cat car-deploy.yml
           
+      - name: Commit files
+        run: |
+          git config --local user.email "mngouanom@gmail.com"
+          git config --local user.name "maxime"
+          git commit -a -m "Add changes"
+          
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
