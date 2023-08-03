@@ -23,7 +23,6 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
           token: ${{ secrets.TOKEN }}
-          repository: 'dev'
       
       - name: Set up JDK 11 for x64
         uses: actions/setup-java@v3
@@ -61,7 +60,7 @@ jobs:
         run: |
           git config --local user.email "mngouanom@gmail.com"
           git config --local user.name "maxime menes"
-          git checkout -m dev
+          git checkout -m main
           git add car-deploy.yml
           git commit -m "Add changes"
           
